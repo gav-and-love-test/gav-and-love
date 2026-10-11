@@ -1,6 +1,8 @@
 name = "gavlove-booking"
 main = "src/index.js"
 compatibility_date = "2024-09-01"
+# ТЕСТОВИЙ СТЕНД (репетиція передачі): акаунт GAVLOVE-TEST. Цей файл живе лише в клоні gav.and.love-test.
+account_id = "40e0ffdf299102af2d26f0c3a5e93a77"
 
 [triggers]
 # "0 16 * * *"   — daily (16:00 UTC ≈ 19:00 Kyiv): salon digest + day-before reminders to clients
@@ -9,14 +11,14 @@ crons = ["0 16 * * *", "*/30 * * * *"]
 
 [vars]
 # Origin allowed to call the Worker (the live site). Change if the domain changes.
-ALLOW_ORIGIN = "https://besenok911-cloud.github.io"
-SITE_URL = "https://besenok911-cloud.github.io/gav-and-love"
+ALLOW_ORIGIN = "https://gav-and-love-test.github.io"
+SITE_URL = "https://gav-and-love-test.github.io/gav-and-love"
 
 # CRM database (Cloudflare D1)
 [[d1_databases]]
 binding = "DB"
 database_name = "gavlove-crm"
-database_id = "50b72473-38b0-4908-bcf6-3938dffbf3f2"
+database_id = "b71ac455-93cc-4aea-845e-bc03e3bb1ebb"   # GAVLOVE-TEST
 
 # Pet photos (bytes). Metadata stays in D1; the row keeps r2_key.
 [[r2_buckets]]
@@ -38,6 +40,7 @@ bucket_name = "gavlove-backups"
 # ---------------------------------------------------------------------------
 [env.dev]
 name = "gavlove-booking-dev"
+account_id = "0923264b641888299c0583c0361b8e22"   # dev-контур лишається в особистому акаунті
 
 [env.dev.vars]
 ALLOW_ORIGIN = "*"

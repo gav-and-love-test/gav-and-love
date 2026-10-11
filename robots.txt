@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
-Sitemap: https://besenok911-cloud.github.io/gav-and-love/sitemap.xml
+Sitemap: https://gav-and-love-test.github.io/gav-and-love/sitemap.xml
